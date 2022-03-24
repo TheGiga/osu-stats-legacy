@@ -25,10 +25,9 @@ async def on_ready():
 @bot_instance.slash_command(name='player')
 async def osu_player(
         ctx: discord.ApplicationContext,
-        name: str,
-        mode: str = "osu!"
+        name: str
 ):
-    player = await API.get_osu_player(name=name, mode=mode)
+    player = await API.get_osu_player(name=name)
 
     embed = discord.Embed(
         title=f'{player.username} - Lvl. {player.level}',
