@@ -12,3 +12,7 @@ To make the bot work:
 1. Clone the repo.
 2. Configure bot by creating ".env" file in main bot folder (where main.py is stored)
 3. Follow the "env.example" file.
+
+
+You can get BOT TOKEN here -> https://discord.com/developers
+And osu!api token here -> https://osu.ppy.sh/p/api
