@@ -1,7 +1,7 @@
 # osu-stats
 The osu!stats discord bot made in Python using v1 osu API. 
 
-Python 3.6 -> latest (24.03.2022)
+Python 3.8 -> latest (24.03.2022)
 
 Modules:
 py-cord==2.0.0b5
