@@ -1,3 +1,9 @@
+
+"""
+By gigabit- AKA https://github.com/TheGiga 24.03.2022
+Glory to Ukraine.
+"""
+
 import discord
 import os
 
