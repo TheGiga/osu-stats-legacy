@@ -1,6 +1,4 @@
-
 class User:
-
     """
     Represents osu player as class.
     """

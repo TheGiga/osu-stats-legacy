@@ -1,6 +1,6 @@
-import discord
-
 from abc import ABC
+
+import discord
 
 
 class OsuBot(discord.Bot, ABC):

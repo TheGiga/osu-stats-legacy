@@ -4,11 +4,12 @@ By gigabit- AKA https://github.com/TheGiga 24.03.2022
 Glory to Ukraine.
 """
 
-import discord
 import os
 
-from lib import OsuBot, Api
+import discord
 from dotenv import load_dotenv
+
+from lib import OsuBot, Api, UserNotFound
 
 load_dotenv()
 intents = discord.Intents.default()
@@ -27,7 +28,13 @@ async def osu_player(
         ctx: discord.ApplicationContext,
         name: str
 ):
-    player = await API.get_osu_player(name=name)
+    try:
+        player = await API.get_osu_player(name=name)
+    except UserNotFound:
+        return await ctx.respond(
+            embed=discord.Embed(title="User not found!", colour=discord.Colour.red()),
+            ephemeral=True
+        )
 
     embed = discord.Embed(
         title=f'{player.username} - Lvl. {player.level}',
@@ -37,12 +44,14 @@ async def osu_player(
             
             **PP:** **`{player.pp}`**
             **Rank:** `{player.rank}` | `{player.country_rank}` :flag_{player.country.lower()}:
-            **Accuracy**: `{player.accuracy}`%
+            **Accuracy**: `{player.accuracy}%`
             
             **SS** count: `{player.total_ss}`
             **S** count: `{player.total_s}`
             
             Player country is **{player.country}** :flag_{player.country.lower()}:
+            
+            [Go to website profile](https://osu.ppy.sh/users/{player.user_id})
         """,
         colour=discord.Colour.purple()
     )
@@ -51,7 +60,6 @@ async def osu_player(
     embed.set_footer(text=f'ID: {player.user_id}')
 
     await ctx.respond(embed=embed)
-
 
 if __name__ == "__main__":
     bot_instance.run(os.getenv("TOKEN"))
