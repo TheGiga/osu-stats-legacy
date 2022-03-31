@@ -16,6 +16,10 @@ To make the bot work:
     - Replace CHANGEME fields by your tokens.
 
 
-Bot uses Slash Commands (`applications.commands` scope)
+**THIS BOT IS A COPY OF [osu-stats](https://github.com/TheGiga/osu-stats) THAT USES __LEGACY__ discord.ext.commands module (legacy commands)**
 
-[Add existing copy of the bot by this link](https://discord.com/api/oauth2/authorize?client_id=804834494486020106&permissions=105227078720&scope=bot%20applications.commands)
+Requires `message_content` intent.
+
+
+osu!stats [legacy] -> 
+[Add existing copy of the bot by this link](https://discord.com/api/oauth2/authorize?client_id=959163497185411072&permissions=105227078720&scope=bot)
